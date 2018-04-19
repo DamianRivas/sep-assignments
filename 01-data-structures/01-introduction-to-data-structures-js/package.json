@@ -1,0 +1,22 @@
+{
+  "name": "01-introduction-to-data-structures",
+  "version": "1.0.0",
+  "description": "First exercise on data structures",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DamianRivas/sep-assignments.git"
+  },
+  "author": "Damian Rivas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DamianRivas/sep-assignments/issues"
+  },
+  "homepage": "https://github.com/DamianRivas/sep-assignments#readme",
+  "devDependencies": {
+    "jest": "^22.4.3"
+  }
+}
