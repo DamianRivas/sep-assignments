@@ -1,0 +1,30 @@
+1. How does your data structure allow developers to access and manipulate the data?
+
+The join method allows developers to add members to the end of the line, and this is
+the only way to add new members into the line because people shouldn't be able to cut
+into the middle of a line. The `leave` method allows developers to remove members
+from the line.
+
+Developers can insert pixels into the screen by using the `insert` method. If
+developers want to modify a pixel they can simply `insert` a new one to override it.
+Pixels can be created by instantiating a new pixel with the appropriate parameters.
+
+2. If a developer wanted to find a specific element in your data structure, how would you search for it?
+
+For the line data structure, developers can use the built-in search method to search
+the line for a a member by name. They can also use the front, middle and back methods
+to retrieve members in the front, middle and back of the line.
+
+For the screen data structure, developers can use the `at` method to retrieve a pixel
+at a specefic coordinate on the screen. Since pixels are just color values with
+coordinates, this is the most sensible way of retrieving them.
+
+3. What other real-world data can each structure represent?
+
+Since the screen is essentially just a matrix with data, it can easily be modified to
+represent any real world object that relies on a grid such as a chess board or even
+something simpler like a stove with 2x2 burners.
+
+A line can represent anything where items can only be inserted from one side and
+removed from the opposite side. Queues come to mind as well as tubes, and even
+checklists that must be completed in the order of instructions received.
