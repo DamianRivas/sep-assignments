@@ -16,7 +16,7 @@ class Line {
       let firstPart = this.members.slice(0, index);
       let remainingPart = this.members.slice(index + 1, this.members.length);
 
-      this.members = firstPart.concat(remainingPart);
+      this.members = [...firstPart, ...remainingPart];
     }
   }
 
