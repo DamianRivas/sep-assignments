@@ -1,0 +1,15 @@
+{
+  "name": "02-stacks-and-queues",
+  "version": "1.0.0",
+  "description": "Stack and Queue data structures implemented in JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "watch": "jest --watch"
+  },
+  "author": "Damian Rivas",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^22.4.3"
+  }
+}
