@@ -1,0 +1,15 @@
+{
+  "name": "03-linked-lists",
+  "version": "1.0.0",
+  "description": "Creating the linked list data structure",
+  "main": "linked_list.js",
+  "scripts": {
+    "test": "jest",
+    "watch": "jest --watch"
+  },
+  "author": "Damian Rivas",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^22.4.3"
+  }
+}
