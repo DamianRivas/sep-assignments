@@ -1,0 +1,31 @@
+1. What is Spatial Locality and why does it benefit performance?
+
+Spatial locality is when the the processor retrieves an entire range of locations
+from memory and places them in the cache. This happens when the processor requests
+a piece of data from the cache and it's not found. Instead of retrieving one location
+of memory at a time it retrieves a range and this benefits performance because it
+limits the number of RAM lookups which is slower than cache lookups.
+
+2. Compare the performance of an Array to a Linked List using the Benchmark module.
+
+  a. Compare the time it takes to create a 10,000 item Array to appending 10,000 items
+    to a Linked List.
+
+    > Appending 10,000 items to a linked list is about 12% slower than creating an array
+      with 10,000 items.
+
+  b. Compare the time it takes to access the 5000th element of the Array and the 5000th
+    Node in the Linked List.
+
+    > Accessing the 5000th element was vastly slower for the linked list than the array,
+      which makes sense because the linked list has to iterate an average of n/2 times to
+      reach the desired element. Whereas with the array it's a short, constant time.
+
+  c. Compare the time it takes to remove the 5000th element from the Array to removing
+    the 5000th Node in the Linked List.
+
+    > Removing elements from the data structure was where the linked list shined. The array
+      was about 91% slower than the linked list. This makes sense because once the linked list
+      reaches the node it wants to remove, it simply changes where the nodes point to. Whereas
+      the array has to rebuild itself without the element that's being removed, and the bigger
+      the array, the longer this takes.
