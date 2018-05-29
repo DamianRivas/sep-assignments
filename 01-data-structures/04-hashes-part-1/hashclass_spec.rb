@@ -41,6 +41,15 @@ RSpec.describe HashClass, type: Class do
   end
 
   describe "hash[key] = value" do
+    it "replaces the value when a collision occurs and the keys match" do
+      hash = HashClass.new(1)
+      hash["key"] = "value"
+      expect(hash.size).to eq 1
+      hash["key"] = "different"
+      expect(hash.size).to eq 1
+      expect(hash["key"]).to eq "different"
+    end
+
     it "does not resize the array when a collision occurs and the values match" do
       hash = HashClass.new(1)
       hash["key"] = "value"
@@ -49,12 +58,12 @@ RSpec.describe HashClass, type: Class do
       expect(hash.size).to eq 1
     end
 
-    it "resizes the array when a collision occurs and the values do not match" do
+    it "resizes the array when a collision occurs and the keys do not match" do
       hash = HashClass.new(1)
       hash["key"] = "value"
       expect(hash.size).to eq 1
-      hash["key"] = "different"
-      expect(hash.size).to eq 2
+      hash["key2"] = "different"
+      expect(hash.size).to eq 4
     end
 
     it "sets the value of key to value" do
@@ -71,6 +80,15 @@ RSpec.describe HashClass, type: Class do
       expect(lotr_movies["The Hobbit: An Unexpected Journey"]).to eq "3 hours, 2 minutes"
       expect(lotr_movies["The Hobbit: The Desolation of Smaug"]).to eq "3 hours, 7 minutes"
       expect(lotr_movies["The Hobbit: The Battle of Five Armies"]).to eq "2 hours, 44 minutes"
+    end
+  end
+
+  describe "hash[key]" do
+    it "returns the correct value" do
+      hash = HashClass.new(5)
+      hash["key"] = "value"
+
+      expect(hash["key"]).to eq "value"
     end
   end
 end
