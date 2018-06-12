@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 class LinkedList {
   constructor(node) {
@@ -87,10 +87,13 @@ class LinkedList {
 
     this.head = node;
     this.head.next = temp;
+    temp = null;
   }
 
   removeFront() {
-    if (!this.head) { return; }
+    if (!this.head) {
+      return;
+    }
 
     let temp = this.head;
 
