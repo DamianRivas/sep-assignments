@@ -24,22 +24,24 @@ class HashClass
     i = index(key, size)
 
     if @items[i]
-      @items[i].value
+      return @items[i].value
     end
+
+    nil
   end
 
   def resize
-    newArr = Array.new(size * 2)
+    new_array = Array.new(size * 2)
 
     @items.each do |item|
       if item
-        i = index(item.key, newArr.size)
+        i = index(item.key, new_array.size)
 
-        newArr[i] = item
+        new_array[i] = item
       end
     end
 
-    @items = newArr
+    @items = new_array
 
   end
 

@@ -105,4 +105,19 @@ class LinkedList
     @head = @head.next
     temp = nil
   end
+
+  def size
+    count = 0
+    if !@head
+      count
+    else
+      node = @head
+      while node
+        count += 1
+        node = node.next
+      end
+
+      count
+    end
+  end
 end
