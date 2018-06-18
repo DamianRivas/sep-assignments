@@ -16,7 +16,7 @@ class SeparateChaining
       @items[i] = LinkedList.new()
     end
 
-    @items[i].add_to_tail(node)
+    @items[i].add_to_front(node)
 
     if self.load_factor > @max_load_factor
       self.resize
@@ -85,7 +85,7 @@ class SeparateChaining
             arr[i] = LinkedList.new()
           end
 
-          arr[i].add_to_tail(node)
+          arr[i].add_to_front(node)
           node = node.next
         end
       end
