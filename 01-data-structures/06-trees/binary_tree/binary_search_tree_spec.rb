@@ -102,9 +102,9 @@ RSpec.describe BinarySearchTree, type: Class do
     end
 
     it "properly deletes a left node" do
-      tree.insert(root, hope)
-      tree.delete(root, hope.title)
-      expect(tree.find(root, hope.title)).to be_nil
+      tree.insert(root, pacific_rim)
+      tree.delete(root, pacific_rim.title)
+      expect(tree.find(root, pacific_rim.title)).to be_nil
     end
 
     it "properly deletes a left-left node" do
@@ -115,7 +115,8 @@ RSpec.describe BinarySearchTree, type: Class do
     end
 
     it "properly deletes a left-right node" do
-      tree.insert(root, donnie)
+      tree.insert(root, braveheart)
+      tree.insert(root, pacific_rim)
       tree.insert(root, inception)
       tree.delete(root, inception.title)
       expect(tree.find(root, inception.title)).to be_nil
