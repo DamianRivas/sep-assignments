@@ -106,6 +106,7 @@ class MinBinaryHeap
 
       i += 1
     end
+    deleted_node = heap_array[index]
     last = i - 1
 
     # Delete the node and return if it's the last leaf
@@ -114,9 +115,9 @@ class MinBinaryHeap
       is_left_node = parent && (index - 1) % 2 == 0
 
       if is_left_node
-        return parent.left = nil
+        return parent.left = nil if parent
       else
-        return parent.right = nil
+        return parent.right = nil if parent
       end
     end
 
@@ -128,9 +129,9 @@ class MinBinaryHeap
     last_is_left_node = (last - 1) % 2 == 0
 
     if last_is_left_node
-      parent_of_last.left = nil
+      parent_of_last.left = nil if parent
     else
-      parent_of_last.right = nil
+      parent_of_last.right = nil if parent
     end
 
     # If root node is being deleted, replace it with a new absolute min
@@ -142,11 +143,12 @@ class MinBinaryHeap
     end
 
     move_down(index, heap_array)
+    deleted_node
   end
 
   # Recursively move the node at `index` down the tree
   def move_down(index, heap_array)
-    node = heap_array[index]
+    return if (node = heap_array[index]) == nil
     parent = find_parent(heap_array, index)
 
     if node.left && node.left <= node && (node.right.nil? || node.left <= node.right)
